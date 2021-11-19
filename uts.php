@@ -1,34 +1,23 @@
-<!DOCTYPE html>
 <html>
-<title>PENJUMLAHAN</title>
+<head>
+    <title>Penjumlahan Dengan PHP</title>
+</head>
 <body>
-
-<h1>UTS Pemograman Internet Belgis</h1>
-<form name="autoSumForm" action="">
-  Nilai Pertama :<br>
-  <input type="text" name="nilai1" onFocus="startCalc();">
-  <br>
-  Nilai ke dua:<br>
-  <input type="text" name="nilai2" onFocus="startCalc();"" onBlur="stopCalc();" >
-  <br><br>
-  Hasil :<br>
-  <input type="text" name="hasil" onchange="tryNumberFormat(this.form.thirdBox);">
-  <br>
-</form>
-
-
-<script>
-function startCalc(){
-interval = setInterval("calc()",1);}
-function calc(){
-y = document.autoSumForm.nilai1.value;
-z = document.autoSumForm.nilai2.value;
-
-document.autoSumForm.hasil.value = ( y * z );}
-function stopCalc(){
-clearInterval(interval);}
-</script>
-
-
-</body>
+    <form method="post" >
+            <label>Masukan Angka 1</label><br>
+            <input type="text" name="a" id="a"><br>
+            <label>Masukan Angka 2</label><br>
+            <input type="text" name="b" id="b"><br>
+            <br>
+            <input type="submit" name="Jumlahkan" id="Jumlahkan" value="Jumlahkan"><br>
+        <?php
+        if(isset($_POST["Jumlahkan"]) && $_POST["Jumlahkan"]=="Jumlahkan"){
+            $a=$_POST["a"];
+            $b=$_POST["b"];
+            $penjumlahan=$a+$b;
+            echo"$penjumlahan";
+        }
+        ?>
+    </form>
+<body>
 </html>
